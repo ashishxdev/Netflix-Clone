@@ -11,7 +11,7 @@ body {
 }
 
 .main {
-    background-image: url("assets/images/bg.jpg");
+    background-image: url("bg.jpg");
     background-position: center center;
     background-size: max(1200px, 100vw);
     background-repeat: no-repeat;
@@ -194,6 +194,7 @@ section.first>div :nth-child(2) {
 
 .faqbox svg {
     filter: invert(1);
+    transition: transform 0.3s ease;
 }
 
 .faqbox {
@@ -204,10 +205,24 @@ section.first>div :nth-child(2) {
     background-color: #2d2d2d;
     padding: 24px;
     max-width: 60vw;
+    position: relative;
+    flex-wrap: wrap;
     margin: 34px auto;
     cursor: pointer;
 }
-
+.answer {
+    display: none;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ccc;
+    flex-basis: 100%;
+}
+.faqbox.active .answer {
+    display: block;
+}
+.faqbox.active svg {
+    transform: rotate(45deg);
+}
 footer {
     color: white;
     max-width: 60vw;
